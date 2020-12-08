@@ -1,0 +1,95 @@
+.form {
+    background-color: var(--primary);
+    padding: 4rem 3rem;
+    min-width: 40vw;
+    height: 70vh;
+    opacity: 0.9;
+    position: absolute;
+    left: 45%;
+    z-index: 900;
+    color: black;
+    font-size: 0.8rem;
+  }
+  .form-text {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .bold {
+    font-weight: bold;
+  }
+  .lite {
+    opacity: 0.7;
+  }
+  .red {
+    color: var(--secondary);
+  }
+  form * {
+    outline: none;
+  }
+  #category {
+    position: relative;
+    left: 70%;
+    border: 1px solid #969a9b;
+    background: white;
+    border-bottom: none;
+  }
+  #email,
+  #password,
+  #submitLogin {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #969a9b;
+    background: white;
+  }
+  #check {
+    margin-right: 0.5rem;
+  }
+  #submitLogin {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    background: var(--secondary);
+    color: white;
+  }
+  #submitLogin:hover {
+    background: white;
+    color: var(--secondary);
+    cursor: pointer;
+  }
+  #forgot {
+    text-align: center;
+  }
+  #forgot:hover {
+    cursor: pointer;
+    color: var(--secondary);
+  }
+  .show {
+    display: block;
+  }
+  .error {
+    margin-top: 0.5rem;
+    text-align: center;
+    color: red;
+  }
+  @media all and (max-width: 820px) {
+    .form {
+      left: 5%;
+      min-width: 60vw;
+    }
+    .sign {
+      display: none;
+    }
+  }
+  @media all and (max-width: 500px) {
+    .form {
+      min-width: 90vw;
+      padding: 2rem 1rem;
+    }
+    #email,
+    #password,
+    #submitLogin {
+      padding: 0.5rem;
+    }
+  }

@@ -1,0 +1,29 @@
+
+    .contact {
+      width: 100vw;
+      height: 88vh;
+      background-color: #c4c4c4;
+      color: black;
+      padding: 1rem 2rem;
+      font-size: 2rem;
+    }
+    .body {
+      width: 60%;
+      text-align: center;
+      margin: 15% auto 0;
+    }
+    .body * {
+      margin-bottom: 2rem;
+    }
+    #back:hover {
+      cursor: pointer;
+    }
+    @media all and (max-width: 600px) {
+      .contact {
+        font-size: 1.5rem;
+      }
+      .body {
+        width: 80%;
+        margin: auto;
+      }
+    }
