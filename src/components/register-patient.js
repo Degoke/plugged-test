@@ -45,7 +45,7 @@ const RegisterPatient = ({ handleChange, handleSubmit, error }) => {
                             <input
                                 type="number"
                                 placeholder="Age"
-                                name="age"
+                                name="dateOfBirth"
                                 onChange={handleChange}
                                 required
                                 className='reg-pat-input'
@@ -118,6 +118,26 @@ const RegisterPatient = ({ handleChange, handleSubmit, error }) => {
                             type="password"
                             placeholder="Create Password"
                             name="password"
+                            onChange={handleChange}
+                            required
+                            className='reg-pat-input'
+                        ></input>
+                    </label>
+                    <label>
+                        <input
+                            type="text"
+                            placeholder="Address"
+                            name="address"
+                            onChange={handleChange}
+                            required
+                            className='reg-pat-input'
+                        ></input>
+                    </label>
+                    <label>
+                        <input
+                            type="number"
+                            placeholder="Phone number"
+                            name="contactInfo"
                             onChange={handleChange}
                             required
                             className='reg-pat-input'

@@ -1,11 +1,11 @@
 .register-container {
     background-color: var(--primary);
     width: 48vw;
-    height: 80vh;
     padding-left: 2rem;
     position: absolute;
     left: 37%;
     color: black;
+    padding-bottom: 1rem;
   }
   #register-category {
     float: right;

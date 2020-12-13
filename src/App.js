@@ -11,6 +11,7 @@ import {
   Route
 } from "react-router-dom";
 import Recover from './pages/recover-password';
+import PatientProfile from './pages/patient/profile';
 
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
         </Route>
         <Route exact path='/recover-password'>
           <Recover />
+        </Route>
+        <Route exact path='/user/:id'>
+          <PatientProfile />
         </Route>
         <Route exact path='/'>
           <Home />

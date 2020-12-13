@@ -3,7 +3,7 @@ import RegisterHospital from "../components/register-hospital";
 import NavBar from "../components/navbar";
 import { useState } from "react";
 import './register.css';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 
 const Register = () => {
   const [category, setCategory] = useState("patient");
@@ -13,6 +13,8 @@ const Register = () => {
   const [hospital, setHospital] = useState({});
 
   const [error, setError] = useState(null);
+
+  const history = useHistory();
 
   const handleChange = (e) => {
     setError(null);
@@ -43,7 +45,7 @@ const Register = () => {
       const data = await response.json();
 
       if (response.status === 200 || response.status === 201) {
-        alert("Success, check your email to verify your account");
+        history.push('/login');
       } else {
         setError(data.message);
       }

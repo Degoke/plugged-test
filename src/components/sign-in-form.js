@@ -1,17 +1,17 @@
 import './sign-in-form.css';
 import { useState } from "react";
-import {useLocation, Link} from "react-router-dom";
+import {useLocation, Link, useHistory} from "react-router-dom";
 
 const Form = () => {
   const [category, setCategory] = useState("hospital");
 
   const [state, setState] = useState({});
 
-  const [setUser] = useState({});
-
   const [error, setError] = useState(null);
 
   const location = useLocation();
+
+  const history = useHistory();
 
   const display = () => {
     if(location.pathname === '/login'){
@@ -37,9 +37,12 @@ const Form = () => {
 
       if (response.status === 200) {
         //const userName = `${data.firstname}-${data.lastname}`;
-        setUser(data);
+        for (const key in data) {
+          sessionStorage.setItem(`${key}`, data[key]);
+        }
+        history.push(`/user/${data._id}`)
         
-      } else setError(data.message);
+      } else {setError(data.message)};
     } else if (category === "hospital") {
       const response = await fetch(
         "https://pluggedhackathon.herokuapp.com/api/hospitals/login",
@@ -52,7 +55,7 @@ const Form = () => {
       const data = await response.json();
 
       if (response.status === 200) {
-        setUser(data);
+        
       } else setError(data.message);
     }
   };
