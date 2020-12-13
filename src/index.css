@@ -38,7 +38,7 @@ a {
   color: inherit;
 }
 
-.wrapper {
+.wrapper, .home {
   background-color: black;
   background-repeat: no-repeat;
   background-size: contain;

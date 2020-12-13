@@ -1,21 +1,30 @@
-const MobileNavBar = () => {
+import { NavLink } from 'react-router-dom';
+import {useEffect} from 'react';
+
+const MobileNavBar = ({switchNav}) => {
+  useEffect(() => {
+    const navMenu = document.querySelectorAll(".mNavs");
+    const nav = document.getElementById('mNav')
+    navMenu.forEach((link) => {
+      link.onclick = () => {
+        nav.style.display = "none";
+      };
+    });
+  });
+
   return (
     <div className="mobile" id="mNav">
       <ul className="nav" id="nav">
-        <li>
-          <a href="/" className="mNav">
-            Our Mission
-          </a>
+      <li>
+          <NavLink to="/mission" className='mNavs'>Our Mission</NavLink>
         </li>
         <li>
-          <a href="/" className="mNav">
-            Register/Login
-          </a>
+          {switchNav()}
         </li>
         <li>
-          <a href="/" id="contact" className="mNav">
+          <NavLink to="/contact" id="contact" className='mNavs'>
             Contact Us
-          </a>
+          </NavLink>
         </li>
       </ul>
       <img src="/images/menu-rod.png" alt="" />
