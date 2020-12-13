@@ -3,6 +3,7 @@ import RegisterHospital from "../components/register-hospital";
 import NavBar from "../components/navbar";
 import { useState } from "react";
 import './register.css';
+import {Link} from 'react-router-dom';
 
 const Register = () => {
   const [category, setCategory] = useState("patient");
@@ -30,7 +31,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (category == "patient") {
+    if (category === "patient") {
       const response = await fetch(
         "https://pluggedhackathon.herokuapp.com/api/patients",
         {
@@ -96,7 +97,7 @@ const Register = () => {
             />
           )}
           
-            <p>Sign in instead</p>
+            <Link to='/login'><p>Sign in instead</p></Link>
         
         </div>
       </div>

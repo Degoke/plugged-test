@@ -5,7 +5,7 @@ import Form from "../components/sign-in-form";
 
 const Home = () => {
   return (
-    <div classname="home">
+    <div className="home">
       <BackgroundVideo />
       <NavBar />
       <Form />

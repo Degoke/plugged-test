@@ -1,25 +1,26 @@
 import './sign-in-form.css';
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
+import {useLocation, Link} from "react-router-dom";
 
 const Form = () => {
   const [category, setCategory] = useState("hospital");
 
   const [state, setState] = useState({});
 
-  const [user, setUser] = useState({});
+  const [setUser] = useState({});
 
   const [error, setError] = useState(null);
 
+  const location = useLocation();
 
-  useEffect(() => {
-    authorize();
-  }, [user]);
-
-  const authorize = useCallback(() => {
-    for (const key in user) {
-      sessionStorage.setItem(`${key}`, user[key]);
+  const display = () => {
+    if(location.pathname === '/login'){
+      return 'block'
     }
-  }, [user]);
+    else{
+      return "none"
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,7 +36,7 @@ const Form = () => {
       const data = await response.json();
 
       if (response.status === 200) {
-        const userName = `${data.firstname}-${data.lastname}`;
+        //const userName = `${data.firstname}-${data.lastname}`;
         setUser(data);
         
       } else setError(data.message);
@@ -68,12 +69,12 @@ const Form = () => {
 
 
   return (
-    <div className="form" id="login-form" >
+    <div className="form" style={{display: display()}} id="login-form" >
       <div className="form-text">
         <p className="bold sign">Sign in to continue</p>
         <p className="lite">Not a member yet?</p>
         
-          <a href='/' className="red bold">Register now</a>
+          <Link to='/register' className="red bold">Register now</Link>
         
       </div>
       <form className="form-container" method="POST" onSubmit={handleSubmit}>
@@ -114,7 +115,7 @@ const Form = () => {
           <input type="submit" id="submitLogin" value="LOGIN NOW" />
         </label>
       </form>
-        <p id="forgot">Forgot your password?</p>
+        <Link to="/recover-password" id="forgot">Forgot your password?</Link>
     </div>
   );
 };
