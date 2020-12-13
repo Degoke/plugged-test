@@ -58,7 +58,7 @@
     background: var(--primary);
   }
   @media all and (max-width: 820px) {
-    input {
+    .register-input {
       width: 80%;
     }
     #submitHospital {
