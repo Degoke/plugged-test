@@ -30,7 +30,7 @@
       display: block;
       align-self: center;
       padding: 1rem;
-      color: black;
+      color: white;
       background: var(--secondary);
       border-radius: 10px;
     }
