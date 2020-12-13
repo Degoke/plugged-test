@@ -28,11 +28,11 @@ const RegisterPatient = ({ handleChange, handleSubmit, error }) => {
                     <label>
                         <select
                             type="text"
-                            className="grey"
+                            className="grey reg-pat-select"
                             name="gender"
                             onChange={handleChange}
                             required
-                            className='reg-pat-select'
+                            
                         >
                             <option value="">Gender</option>
                             <option value="male">Male</option>
@@ -76,11 +76,11 @@ const RegisterPatient = ({ handleChange, handleSubmit, error }) => {
                     <label>
                         <select
                             type="text"
-                            className="grey"
+                            className="grey reg-pat-select"
                             name="bloodgroup"
                             onChange={handleChange}
                             required
-                            className='reg-pat-select'
+                            
                         >
                             <option defaultValue="">Blood Group</option>
                             <option value="A+">A+</option>
