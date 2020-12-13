@@ -38,17 +38,23 @@ a {
   color: inherit;
 }
 
-.wrapper, .home {
+.wrapper {
   background-color: black;
   background-repeat: no-repeat;
   background-size: contain;
   width: 100%;
   min-height: 100vh;
   height: 100%;
-  
 }
 
-button:hover{
+.home {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+button:hover {
   cursor: pointer;
 }
 
