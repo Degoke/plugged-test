@@ -19,7 +19,7 @@ const MobileNavBar = ({switchNav}) => {
           <NavLink to="/mission" className='mNavs'>Our Mission</NavLink>
         </li>
         <li>
-          {switchNav()}
+          {switchNav('mobile')}
         </li>
         <li>
           <NavLink to="/contact" id="contact" className='mNavs'>
