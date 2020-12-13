@@ -1,0 +1,94 @@
+.profile {
+    display: flex;
+    padding: 1rem;
+    padding-left: 3rem;
+  }
+  .side-nav {
+    flex: 0.1;
+    margin-right: 0.5rem;
+  }
+  .dash-nav:hover {
+    background: var(--primary);
+    color: black;
+    cursor: pointer;
+  }
+  .current {
+    background: var(--primary);
+    color: black;
+  }
+  .side-nav li {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 20px;
+  }
+  .dashboard {
+    flex: 0.9;
+    background: var(--primary);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 1rem 3rem;
+    color: rgb(0, 0, 0, 0.6);
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    align-items: center;
+  }
+  .left {
+    display: flex;
+  }
+  .left p {
+    margin-right: 2rem;
+  }
+  .rite {
+    display: flex;
+    align-items: center;
+  }
+  .rite p {
+    margin-left: 2rem;
+  }
+  #psearch {
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    border: none;
+    background: rgb(0, 0, 0, 0.1);
+    color: rgb(0, 0, 0, 0.6);
+  }
+  .body {
+    margin: auto;
+    width: 60%;
+  }
+  .body h2 {
+    margin: 3rem 0 2rem;
+  }
+  .orange {
+    color: var(--secondary);
+  }
+  .link:hover {
+    cursor: pointer;
+  }
+
+  .body label{
+      margin-bottom: 1rem;
+  }
+  @media all and (max-width: 820px) {
+    .body {
+      width: 90%;
+    }
+    .profile {
+      padding: 0.5rem;
+    }
+    .side-nav {
+      margin: 0;
+      display: none;
+    }
+    .dashboard {
+      padding: 1rem 0.5rem;
+      flex: 100%;
+    }
+    .hide {
+      display: none;
+    }
+  }

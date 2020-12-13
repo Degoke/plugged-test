@@ -55,6 +55,7 @@ const Form = () => {
       const data = await response.json();
 
       if (response.status === 200) {
+        history.push(`/hospital/${data._id}`)
         
       } else setError(data.message);
     }

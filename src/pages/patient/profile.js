@@ -2,6 +2,7 @@ import PatientOverview from "../../components/patient-overview";
 import { Link, useLocation,useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import './profile.css';
+import {withAuth} from '../../components/utils';
 
 const PatientProfile = () => {
   const [state, setState] = useState("loading");
@@ -65,4 +66,4 @@ const PatientProfile = () => {
   );
 };
 
-export default PatientProfile;
+export default withAuth(PatientProfile);

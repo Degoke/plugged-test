@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import Recover from './pages/recover-password';
 import PatientProfile from './pages/patient/profile';
+import HospitalPage from './pages/hospital/hospital-profile';
 
 
 function App() {
@@ -36,7 +37,10 @@ function App() {
         <Route exact path='/user/:id'>
           <PatientProfile />
         </Route>
-        <Route exact path='/'>
+        <Route exact path='/hospital/:id'>
+          <HospitalPage />
+        </Route>
+        <Route path='/'>
           <Home />
         </Route>
       </Switch>
