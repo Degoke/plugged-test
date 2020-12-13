@@ -33,6 +33,10 @@
       align-self: center;
       padding: 2rem;
     }
+
+    .mission-images{
+      display: none;
+    }
   }
   @media all and (max-width: 500px) {
     .mission-details {
