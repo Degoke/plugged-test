@@ -8,7 +8,7 @@ const BigNavBar = ({switchNav}) => {
     <>
       <ul className="menu">
         <li>
-          <NavLink to="/">Get Started</NavLink>
+          <NavLink to="/register">Get Started</NavLink>
         </li>
         <li>
           <NavLink to="/mission">Our Mission</NavLink>

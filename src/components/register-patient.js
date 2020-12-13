@@ -1,4 +1,4 @@
-const RegisterPatient = ({ handleChange, handleSubmit, error }) => {
+const RegisterPatient = ({ handleChange, handleSubmit, error, refs }) => {
   return (
     <>
       <form id="register-patient" onSubmit={handleSubmit} method="POST">
@@ -140,13 +140,14 @@ const RegisterPatient = ({ handleChange, handleSubmit, error }) => {
             ></input>
           </label>
         </div>
-        <label for="file" id="label">
+        <label htmlFor="file" id="label">
           {" "}
           Upload Picture
           <input
             type="file"
             name="image"
             id="file"
+            ref={refs}
             className="grey"
             onChange={handleChange}
           />

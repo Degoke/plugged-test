@@ -11,11 +11,39 @@ const NavBar = () => {
 
   const showForm = () => {
     const form = document.getElementById("login-form");
+    const vid = document.getElementById("vid");
+    const home = document.querySelector('.home-body')
+    const mission = document.getElementById("mission");
     if (!shown) {
-      form.style.display = "block";
+      
+      switch(location.pathname){
+        case '/':
+          vid.pause();
+          home.style.opacity = '0.5';
+          form.style.display = "block";
+          break
+        case '/mission':
+          mission.style.opacity = '0.5';
+          form.style.display = "block";
+          break
+          default:
+            form.style.display = "block";
+      }
       setShown(true);
     } else if (shown) {
-      form.style.display = "none";
+      switch(location.pathname){
+        case '/':
+          vid.play();
+          home.style.opacity = '1';
+          form.style.display = "none";
+          break
+        case '/mission':
+          mission.style.opacity = '1';
+          form.style.display = "none";
+          break
+          default:
+            form.style.display = "none";
+      }
       setShown(false);
     }
   };

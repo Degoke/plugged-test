@@ -1,7 +1,7 @@
 import RegisterPatient from "../components/register-patient";
 import RegisterHospital from "../components/register-hospital";
 import NavBar from "../components/navbar";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import './register.css';
 import {Link, useHistory} from 'react-router-dom';
 
@@ -16,6 +16,8 @@ const Register = () => {
 
   const history = useHistory();
 
+  const ref = useRef()
+ 
   const handleChange = (e) => {
     setError(null);
     const names = e.target.name;
@@ -34,6 +36,8 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (category === "patient") {
+
+
       const response = await fetch(
         "https://pluggedhackathon.herokuapp.com/api/patients",
         {
@@ -49,6 +53,8 @@ const Register = () => {
       } else {
         setError(data.message);
       }
+
+      
     } else if (category === "hospital") {
       const response = await fetch(
         "https://pluggedhackathon.herokuapp.com/api/hospitals",
@@ -90,6 +96,7 @@ const Register = () => {
               handleChange={handleChange}
               handleSubmit={handleSubmit}
               error={error}
+              refs={ref}
             />
           ) : (
             <RegisterHospital

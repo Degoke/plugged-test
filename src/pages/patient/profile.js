@@ -6,6 +6,7 @@ import {withAuth} from '../../components/utils';
 
 const PatientProfile = () => {
   const [state, setState] = useState("loading");
+  const [record, setRecord] = useState('loading')
   const location = useLocation();
   const history = useHistory();
 
@@ -16,6 +17,26 @@ const PatientProfile = () => {
       data[x] = sessionStorage[x];
     }
     setState(data);
+    const email = sessionStorage.getItem('email')
+    const getData = async () => {
+      const response = await fetch(
+        "https://pluggedhackathon.herokuapp.com/api/healthrecords",
+        {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      const data = await response.json();
+      
+      if (response.status === 200) {
+        const z = data.filter((user) => user.patientEmail === email)
+        setRecord(z[0])
+      } else {alert(data.message)};
+    }
+
+    getData()
+    
+    
   }, [location.pathname]);
 
   const logout = () => {
@@ -25,7 +46,7 @@ const PatientProfile = () => {
 
   return (
     <div className='wrapper'>
-      {state === "loading" ? (
+      {state === "loading" || record === 'loading' ? (
         <div>Loading</div>
       ) : (
         <div className="profile">
@@ -37,8 +58,6 @@ const PatientProfile = () => {
                 </Link>
               </li>
               <li className="dash-nav current">Overview</li>
-              <li className="dash-nav">History</li>
-              <li className="dash-nav">Drugs</li>
             </ul>
           </nav>
           <div className="dashboards">
@@ -58,7 +77,7 @@ const PatientProfile = () => {
                 </p>
               </div>
             </div>
-            <PatientOverview state={state} />
+            <PatientOverview state={state} record={record}/>
           </div>
         </div>
       )}
