@@ -2,7 +2,7 @@ import {Redirect} from 'react-router-dom';
 
 export const withAuth = (Component) => {
     const authRoute = () => {
-        const auth = !!localStorage.getItem('token')
+        const auth = sessionStorage.getItem('token')
         if(auth){
             return <Component />
         }

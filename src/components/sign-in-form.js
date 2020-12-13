@@ -55,6 +55,9 @@ const Form = () => {
       const data = await response.json();
 
       if (response.status === 200) {
+        for (const key in data) {
+          sessionStorage.setItem(`${key}`, data[key]);
+        }
         history.push(`/hospital/${data._id}`)
         
       } else setError(data.message);
