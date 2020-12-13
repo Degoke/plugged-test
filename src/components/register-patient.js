@@ -41,16 +41,6 @@ const RegisterPatient = ({ handleChange, handleSubmit, error, refs }) => {
             <label>
               <input
                 type="number"
-                placeholder="Age"
-                name="dateOfBirth"
-                onChange={handleChange}
-                required
-                className="reg-pat-input"
-              ></input>
-            </label>
-            <label>
-              <input
-                type="number"
                 placeholder="ht"
                 name="height"
                 onChange={handleChange}
